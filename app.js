@@ -19,13 +19,34 @@
 //     console.log("no concern")
 // }
 
-let result = ""
+
+// let guess = "heads"
+// let result = ""
+// const randonNumber = Math.random()
+
+// if(randonNumber < 0.5 ){
+//     result ="heads"
+// }
+// else{
+//    result= "tails"
+// }
+// console.log(result)
+
+// if(guess === result){
+//     console.log("your guess is true")
+// }else{
+//     console.log("your guess is false")
+// }
+
 const randonNumber = Math.random()
 
-if(randonNumber < 0.5 ){
-    result ="heads"
-}
-else{
-   result= "tails"
-}
+let result =""
+
+let guess ="tails"
+
+result = randonNumber <= 0.5 ? "heads" :"tails"
+
 console.log(result)
+
+console.log(guess === result ? "your guess is true": "your guess is false")
+
