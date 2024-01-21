@@ -65,16 +65,25 @@
 
 // console.log(average)
 
-let economy =19
+// let economy =19
 
-let performance = ""
+// let performance = ""
 
-performance = economy <= 6 ? "excellent":
-             economy >6 && economy <= 7 ? "great":
-             economy > 7 && economy <= 8 ? "good":
-             economy > 8 && economy <= 9 ? "average":
-             economy > 9 && economy <= 10 ? "bad":"worst"
+// performance = economy <= 6 ? "excellent":
+//              economy >6 && economy <= 7 ? "great":
+//              economy > 7 && economy <= 8 ? "good":
+//              economy > 8 && economy <= 9 ? "average":
+//              economy > 9 && economy <= 10 ? "bad":"worst"
              
 
-console.log(performance)
+// console.log(performance)
 
+// let cartQuantity ="0"
+
+// let maxQuantity =10
+
+// let minQuantity =1
+
+// let message = cartQuantity <= maxQuantity && cartQuantity >= minQuantity ? "product added to cart": cartQuantity > maxQuantity ? "cart is full": "cart is empty"
+
+// alert(message)
