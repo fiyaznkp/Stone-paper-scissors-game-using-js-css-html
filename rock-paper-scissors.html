@@ -32,13 +32,8 @@
     <button onclick="resetScore()">Reset Score</button>
 
     <script>
-     const score = {
-        totalplayed:0,
-              wins :0,
-              losses:0,
-              ties:0,
-              winPercentage:0
-     }
+     const score = JSON.parse(localStorage.getItem("score"))
+
 
       function playGame(playerMove) {
         const computerMove = computerPicked();
@@ -80,7 +75,9 @@ score.winPercentage =(score.wins/score.totalplayed)*100
         }else if(result === "Tie.") {
             score.ties += 1
         }
+  
 
+        localStorage.setItem('score',JSON.stringify(score))
         alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
 TotalPlayed:${score.totalplayed}, Wins:${score.wins},Losses:${score.losses},Tie:${score.ties},WinPercentage:${score.winPercentage}`);
       }
