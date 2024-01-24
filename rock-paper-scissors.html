@@ -29,8 +29,17 @@
     >
       Scissors
     </button>
+    <button onclick="resetScore()">Reset Score</button>
 
     <script>
+     const score = {
+        totalplayed:0,
+              wins :0,
+              losses:0,
+              ties:0,
+              winPercentage:0
+     }
+
       function playGame(playerMove) {
         const computerMove = computerPicked();
         let result = "";
@@ -60,8 +69,30 @@
             result = "Tie.";
           }
         }
+       
+score.totalplayed += 1
+score.winPercentage =(score.wins/score.totalplayed)*100
 
-        alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}`);
+        if(result==="You win."){
+            score.wins += 1
+        }else if(result === "You lose."){
+            score.losses += 1
+        }else if(result === "Tie.") {
+            score.ties += 1
+        }
+
+        alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
+TotalPlayed:${score.totalplayed}, Wins:${score.wins},Losses:${score.losses},Tie:${score.ties},WinPercentage:${score.winPercentage}`);
+      }
+      
+      function resetScore (){
+        score.totalplayed =0,
+        score.wins =0,
+        score.losses =0,
+        score.ties =0,
+        score.winPercentage =0
+
+        alert("score reseted to 0")
       }
 
       function computerPicked() {
