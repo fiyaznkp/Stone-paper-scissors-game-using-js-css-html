@@ -26,7 +26,7 @@
         cursor: pointer;
 
        }
-       .reset{
+       .reset,.autoplay-button{
         cursor: pointer;
         background-color: white;
         border: none;
@@ -77,11 +77,28 @@
     </p>
     <p class="score match-score"
     ></p>
-    <button onclick="resetScore()" class="reset ">Reset Score</button>
+    <button onclick="resetScore()" class="reset">Reset Score</button>
+    <button class="autoplay-button" onclick="autoPlay()">Auto Play</button>
    
 
 
     <script>
+    let isAutoPlaying = false
+    let setIntervalId =''
+
+      function autoPlay(){
+        if(isAutoPlaying===false){
+         setIntervalId= setInterval(function(){
+          let playerMove = computerPicked()
+          playGame(playerMove)
+        },1000)
+        isAutoPlaying =true
+        }else{
+        clearInterval(setIntervalId)
+        isAutoPlaying=false
+        }
+        
+      }
      const score = JSON.parse(localStorage.getItem("score"))
 
    updateScore()
@@ -139,8 +156,7 @@ score.winPercentage =(score.wins/score.totalplayed)*100
     Computer <img src="${computerMove}-emoji.png" class="icons">`;
 
 
-//         alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}
-// TotalPlayed:${score.totalplayed}, Wins:${score.wins},Losses:${score.losses},Tie:${score.ties},WinPercentage:${score.winPercentage}`);
+
       }
       
 function updateScore (){
@@ -163,7 +179,7 @@ function updateScore (){
 
         document.querySelector()
 
-        // alert("score reseted to 0")
+        
       }
 
       function computerPicked() {
